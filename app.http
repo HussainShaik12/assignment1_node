@@ -1,29 +1,60 @@
-GET http://localhost:3000/todos/?status=TO%20DO
+GET http://localhost:3000/todos/
 ###
-GET http://localhost:3000/todos/?priority=HIGH
+GET http://localhost:3000/todos/?priority=LO
+###
+GET http://localhost:3000/todos/?category=HOME
+###
+GET http://localhost:3000/todos/?priority=LOW&status=TO%20DO
+###
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+###
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+###
+GET http://localhost:3000/todos/?category=HOME
 ###
 GET http://localhost:3000/todos/?search_q=Buy
 ###
-GET http://localhost:3000/todos/?status=IN%20PROGRESS&priority=HIGH
+GET http://localhost:3000/todos/1
 ###
-POST http://localhost:3000/todos/
+GET  http://localhost:3000/agenda/?date=2021-04-0
+###
 
+POST http://localhost:3000/todos/
 Content-Type: application/json
 
 {
     "id":32,
     "todo":"Hello Nodejs",
     "priority":"HIGH",
-    "status":"TO DO",
+    "status":"TODO",
     "category":"LEARNING",
-    "due_date":"2021-04-04",
+    "dueDate":"2021-04-44"
 }
+
+###
+
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
+    "priority":"LOW"
+}
+
 ###
 PUT http://localhost:3000/todos/2/
 Content-Type: application/json
 
 {
-    "status":"DONE",
+    "status":"DONE"
 }
+
 ###
-DELETE http://localhost:3000/todos/2/
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
+    "dueDate":"2021-09-99"
+}
+
+###
+DELETE http://localhost:3000/todos/32
